@@ -63,3 +63,6 @@ typings/
 .eslintrc.js
 nodemon.json
 yarn.lock
+generated
+.babelrc
+prisma.yml

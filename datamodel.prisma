@@ -40,3 +40,17 @@ type File {
   url: String!
   post: Post!
 }
+
+type Room {
+  id: ID! @id
+  participants: [User!]!
+  messages: [Message!]!
+}
+
+type Message {
+  id: ID! @id
+  text: String!
+  from: User! @relation(name: "MessageRelation")
+  to: User! @relation(name: "MessageRelation")
+  room: Room!
+}

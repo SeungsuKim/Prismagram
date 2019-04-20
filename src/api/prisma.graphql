@@ -1368,6 +1368,7 @@ type User {
   comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment!]
   followers(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User!]
   following(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User!]
+  loginSecret: String
 }
 
 type UserConnection {
@@ -1388,6 +1389,7 @@ input UserCreateInput {
   comments: CommentCreateManyWithoutUserInput
   followers: UserCreateManyWithoutFollowingInput
   following: UserCreateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserCreateManyInput {
@@ -1436,6 +1438,7 @@ input UserCreateWithoutCommentsInput {
   likes: LikeCreateManyWithoutUserInput
   followers: UserCreateManyWithoutFollowingInput
   following: UserCreateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserCreateWithoutFollowersInput {
@@ -1449,6 +1452,7 @@ input UserCreateWithoutFollowersInput {
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   following: UserCreateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserCreateWithoutFollowingInput {
@@ -1462,6 +1466,7 @@ input UserCreateWithoutFollowingInput {
   likes: LikeCreateManyWithoutUserInput
   comments: CommentCreateManyWithoutUserInput
   followers: UserCreateManyWithoutFollowingInput
+  loginSecret: String
 }
 
 input UserCreateWithoutLikesInput {
@@ -1475,6 +1480,7 @@ input UserCreateWithoutLikesInput {
   comments: CommentCreateManyWithoutUserInput
   followers: UserCreateManyWithoutFollowingInput
   following: UserCreateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserCreateWithoutPostsInput {
@@ -1488,6 +1494,7 @@ input UserCreateWithoutPostsInput {
   comments: CommentCreateManyWithoutUserInput
   followers: UserCreateManyWithoutFollowingInput
   following: UserCreateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 type UserEdge {
@@ -1508,6 +1515,8 @@ enum UserOrderByInput {
   lastName_DESC
   bio_ASC
   bio_DESC
+  loginSecret_ASC
+  loginSecret_DESC
 }
 
 type UserPreviousValues {
@@ -1517,6 +1526,7 @@ type UserPreviousValues {
   firstName: String
   lastName: String
   bio: String
+  loginSecret: String
 }
 
 input UserScalarWhereInput {
@@ -1604,6 +1614,20 @@ input UserScalarWhereInput {
   bio_not_starts_with: String
   bio_ends_with: String
   bio_not_ends_with: String
+  loginSecret: String
+  loginSecret_not: String
+  loginSecret_in: [String!]
+  loginSecret_not_in: [String!]
+  loginSecret_lt: String
+  loginSecret_lte: String
+  loginSecret_gt: String
+  loginSecret_gte: String
+  loginSecret_contains: String
+  loginSecret_not_contains: String
+  loginSecret_starts_with: String
+  loginSecret_not_starts_with: String
+  loginSecret_ends_with: String
+  loginSecret_not_ends_with: String
   AND: [UserScalarWhereInput!]
   OR: [UserScalarWhereInput!]
   NOT: [UserScalarWhereInput!]
@@ -1638,6 +1662,7 @@ input UserUpdateDataInput {
   comments: CommentUpdateManyWithoutUserInput
   followers: UserUpdateManyWithoutFollowingInput
   following: UserUpdateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserUpdateInput {
@@ -1651,6 +1676,7 @@ input UserUpdateInput {
   comments: CommentUpdateManyWithoutUserInput
   followers: UserUpdateManyWithoutFollowingInput
   following: UserUpdateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserUpdateManyDataInput {
@@ -1659,6 +1685,7 @@ input UserUpdateManyDataInput {
   firstName: String
   lastName: String
   bio: String
+  loginSecret: String
 }
 
 input UserUpdateManyInput {
@@ -1679,6 +1706,7 @@ input UserUpdateManyMutationInput {
   firstName: String
   lastName: String
   bio: String
+  loginSecret: String
 }
 
 input UserUpdateManyWithoutFollowersInput {
@@ -1748,6 +1776,7 @@ input UserUpdateWithoutCommentsDataInput {
   likes: LikeUpdateManyWithoutUserInput
   followers: UserUpdateManyWithoutFollowingInput
   following: UserUpdateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutFollowersDataInput {
@@ -1760,6 +1789,7 @@ input UserUpdateWithoutFollowersDataInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   following: UserUpdateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutFollowingDataInput {
@@ -1772,6 +1802,7 @@ input UserUpdateWithoutFollowingDataInput {
   likes: LikeUpdateManyWithoutUserInput
   comments: CommentUpdateManyWithoutUserInput
   followers: UserUpdateManyWithoutFollowingInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutLikesDataInput {
@@ -1784,6 +1815,7 @@ input UserUpdateWithoutLikesDataInput {
   comments: CommentUpdateManyWithoutUserInput
   followers: UserUpdateManyWithoutFollowingInput
   following: UserUpdateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserUpdateWithoutPostsDataInput {
@@ -1796,6 +1828,7 @@ input UserUpdateWithoutPostsDataInput {
   comments: CommentUpdateManyWithoutUserInput
   followers: UserUpdateManyWithoutFollowingInput
   following: UserUpdateManyWithoutFollowersInput
+  loginSecret: String
 }
 
 input UserUpdateWithWhereUniqueNestedInput {
@@ -1951,6 +1984,20 @@ input UserWhereInput {
   following_every: UserWhereInput
   following_some: UserWhereInput
   following_none: UserWhereInput
+  loginSecret: String
+  loginSecret_not: String
+  loginSecret_in: [String!]
+  loginSecret_not_in: [String!]
+  loginSecret_lt: String
+  loginSecret_lte: String
+  loginSecret_gt: String
+  loginSecret_gte: String
+  loginSecret_contains: String
+  loginSecret_not_contains: String
+  loginSecret_starts_with: String
+  loginSecret_not_starts_with: String
+  loginSecret_ends_with: String
+  loginSecret_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]

@@ -1,0 +1,3 @@
+type Mutation {
+  toogleLike(postId: String!): Boolean!
+}

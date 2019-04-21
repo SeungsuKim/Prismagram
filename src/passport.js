@@ -24,6 +24,9 @@ export const authenticateJwt = (req, res, next) =>
     if (user) {
       req.user = user;
     }
+    if (error) {
+      console.log(error);
+    }
     next();
   })(req, res, next);
 

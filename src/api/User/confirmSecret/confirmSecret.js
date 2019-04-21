@@ -3,14 +3,14 @@ import { generateToken } from "../../../utils";
 
 export default {
   Mutation: {
-    confirmSecret: async (_, args) => {
+    confirmSecret: async (_, args, { request }) => {
+      console.log(request);
       const { email, secret } = args;
       const user = await prisma.user({ email });
       if (user.loginSecret === secret) {
-        // TODO: Return JWT token.
         return generateToken(user.id);
       } else {
-        throw Error("Wront email/secret code combination");
+        throw Error("Wrong email/secret code combination");
       }
     }
   }

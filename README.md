@@ -4,11 +4,11 @@ Cloning Instagram with Express, Prisma, React, and React Native
 ## User Stories 
 
 - [ ] See the feed
-- [ ] Request secret
-- [ ] Confirm secret (login)
-- [ ] Like / Unlike a post
-- [ ] Comment on a post
-- [ ] Search by user
+- [x] Request secret
+- [x] Confirm secret (login)
+- [x] Like / Unlike a post
+- [x] Comment on a post
+- [x] Search by user
 - [ ] Search by location
 - [ ] See user profile
 - [ ] Follow / Unfollow a user

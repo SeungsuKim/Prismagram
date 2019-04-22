@@ -9,7 +9,8 @@ export default {
         email,
         firstName,
         lastName,
-        bio
+        bio,
+        avatar
       } = args;
       const { user } = request;
       return prisma.updateUser({
@@ -19,7 +20,8 @@ export default {
           email,
           firstName,
           lastName,
-          bio
+          bio,
+          avatar
         }
       });
     }

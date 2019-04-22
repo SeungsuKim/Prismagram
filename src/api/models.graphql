@@ -5,15 +5,17 @@ type UserProfile {
 
 type FullPost {
   post: Post!
+  files: [File!]!
   comments: [Comment!]!
-  likeCount: Int!
 }
 
 extend type User {
   fullName: String
-  amIFollowing: Boolean!
+  isFollowing: Boolean!
+  isSelf: Boolean!
 }
 
 extend type Post {
   isLiked: Boolean!
+  likeCount: Int!
 }

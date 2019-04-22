@@ -1,0 +1,10 @@
+type UserProfile {
+  user: User!
+  posts: [Post!]!
+}
+
+type FullPost {
+  post: Post!
+  comments: [Comment!]!
+  likeCount: Int!
+}

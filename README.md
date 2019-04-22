@@ -10,11 +10,12 @@ Cloning Instagram with Express, Prisma, React, and React Native
 - [x] Comment on a post
 - [x] Search by user
 - [x] Search by location
-- [ ] See user profile
+- [x] See user profile
+- [x] See my profile
 - [x] Follow / Unfollow a user
 - [ ] See the full photo
-- [ ] Edit profile
+- [x] Edit profile
 - [x] Create account
-- [ ] Log in
+- [x] Log in
 - [ ] Upload photos
 - [ ] Edit / Delete photo

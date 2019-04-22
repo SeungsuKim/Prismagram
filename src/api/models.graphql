@@ -8,3 +8,12 @@ type FullPost {
   comments: [Comment!]!
   likeCount: Int!
 }
+
+extend type User {
+  fullName: String
+  amIFollowing: Boolean!
+}
+
+extend type Post {
+  isLiked: Boolean!
+}

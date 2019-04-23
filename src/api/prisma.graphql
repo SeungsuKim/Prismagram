@@ -1665,7 +1665,6 @@ type Subscription {
 type User {
   id: ID!
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1691,7 +1690,6 @@ type UserConnection {
 input UserCreateInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1744,7 +1742,6 @@ input UserCreateOneWithoutPostsInput {
 input UserCreateWithoutCommentsInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1761,7 +1758,6 @@ input UserCreateWithoutCommentsInput {
 input UserCreateWithoutFollowersInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1778,7 +1774,6 @@ input UserCreateWithoutFollowersInput {
 input UserCreateWithoutFollowingInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1795,7 +1790,6 @@ input UserCreateWithoutFollowingInput {
 input UserCreateWithoutLikesInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1812,7 +1806,6 @@ input UserCreateWithoutLikesInput {
 input UserCreateWithoutPostsInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1829,7 +1822,6 @@ input UserCreateWithoutPostsInput {
 input UserCreateWithoutRoomsInput {
   id: ID
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1853,8 +1845,6 @@ enum UserOrderByInput {
   id_DESC
   avatar_ASC
   avatar_DESC
-  name_ASC
-  name_DESC
   username_ASC
   username_DESC
   email_ASC
@@ -1876,7 +1866,6 @@ enum UserOrderByInput {
 type UserPreviousValues {
   id: ID!
   avatar: String
-  name: String
   username: String!
   email: String!
   firstName: String
@@ -1916,20 +1905,6 @@ input UserScalarWhereInput {
   avatar_not_starts_with: String
   avatar_ends_with: String
   avatar_not_ends_with: String
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
   username: String
   username_not: String
   username_in: [String!]
@@ -2055,7 +2030,6 @@ input UserSubscriptionWhereInput {
 
 input UserUpdateDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2072,7 +2046,6 @@ input UserUpdateDataInput {
 
 input UserUpdateInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2089,7 +2062,6 @@ input UserUpdateInput {
 
 input UserUpdateManyDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2100,7 +2072,6 @@ input UserUpdateManyDataInput {
 
 input UserUpdateManyMutationInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2186,7 +2157,6 @@ input UserUpdateOneWithoutPostsInput {
 
 input UserUpdateWithoutCommentsDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2202,7 +2172,6 @@ input UserUpdateWithoutCommentsDataInput {
 
 input UserUpdateWithoutFollowersDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2218,7 +2187,6 @@ input UserUpdateWithoutFollowersDataInput {
 
 input UserUpdateWithoutFollowingDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2234,7 +2202,6 @@ input UserUpdateWithoutFollowingDataInput {
 
 input UserUpdateWithoutLikesDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2250,7 +2217,6 @@ input UserUpdateWithoutLikesDataInput {
 
 input UserUpdateWithoutPostsDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2266,7 +2232,6 @@ input UserUpdateWithoutPostsDataInput {
 
 input UserUpdateWithoutRoomsDataInput {
   avatar: String
-  name: String
   username: String
   email: String
   firstName: String
@@ -2362,20 +2327,6 @@ input UserWhereInput {
   avatar_not_starts_with: String
   avatar_ends_with: String
   avatar_not_ends_with: String
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
   username: String
   username_not: String
   username_in: [String!]

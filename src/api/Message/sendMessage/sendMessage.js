@@ -11,11 +11,15 @@ export default {
       let room;
       if (roomId === undefined) {
         if (user.id !== toId) {
-          room = await prisma.createRoom({
-            participants: {
-              connect: [{ id: toId }, { id: user.id }]
-            }
-          }).$fragment(ROOM_FRAGMENT);
+          const rooms = await prisma.user({ id: user.id }).rooms().$fragment(ROOM_FRAGMENT);
+          room = rooms.find((room) => room.participants.find(participant => participant.id === toId));
+          if (!room) {
+            room = await prisma.createRoom({
+              participants: {
+                connect: [{ id: toId }, { id: user.id }]
+              }
+            }).$fragment(ROOM_FRAGMENT);
+          }
         }
       } else {
         room = await prisma.room({ id: roomId }).$fragment(ROOM_FRAGMENT);

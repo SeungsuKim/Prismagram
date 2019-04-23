@@ -10,7 +10,13 @@ const PORT = process.env.PORT || 4000;
 
 const server = new GraphQLServer({
   schema,
-  context: ({ request }) => ({ request, isAuthenticated })
+  context: async ({ request, connection }) => {
+    if (connection) {
+      return { connection, isAuthenticated };
+    } else {
+      return { request, isAuthenticated };
+    }
+  }
 });
 
 server.express.use(logger("dev"));

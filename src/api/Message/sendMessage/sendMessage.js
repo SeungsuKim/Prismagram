@@ -1,6 +1,4 @@
-import { RoboMaker } from "aws-sdk";
 import { prisma } from "../../../../generated/prisma-client";
-import { ROOM_FRAGMENT } from "../../../fragment";
 
 export default {
   Mutation: {
@@ -11,18 +9,18 @@ export default {
       let room;
       if (roomId === undefined) {
         if (user.id !== toId) {
-          const rooms = await prisma.user({ id: user.id }).rooms().$fragment(ROOM_FRAGMENT);
+          const rooms = await prisma.user({ id: user.id }).rooms();
           room = rooms.find((room) => room.participants.find(participant => participant.id === toId));
           if (!room) {
             room = await prisma.createRoom({
               participants: {
                 connect: [{ id: toId }, { id: user.id }]
               }
-            }).$fragment(ROOM_FRAGMENT);
+            });
           }
         }
       } else {
-        room = await prisma.room({ id: roomId }).$fragment(ROOM_FRAGMENT);
+        room = await prisma.room({ id: roomId });
       }
       if (!room) {
         throw Error("Room not found");

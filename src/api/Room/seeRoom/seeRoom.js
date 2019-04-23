@@ -1,5 +1,4 @@
 import { prisma } from "../../../../generated/prisma-client";
-import { ROOM_FRAGMENT } from "../../../fragment";
 
 export default {
   Query: {
@@ -7,7 +6,7 @@ export default {
       isAuthenticated(request);
       const { id } = args;
       const { user } = request;
-      const rooms = await prisma.user({ id: user.id }).rooms().$fragment(ROOM_FRAGMENT);
+      const rooms = await prisma.user({ id: user.id }).rooms();
       const room = rooms.find((room) => room.id === id);
       if (room) {
         return room;

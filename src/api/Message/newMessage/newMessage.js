@@ -5,6 +5,7 @@ export default {
     newMessage: {
       subscribe: (_, args) => {
         const { roomId } = args;
+        // TODO: Subscription for only participants who did not send the message
         return prisma.$subscribe.message({
           AND: [
             { mutation_in: "CREATED" },

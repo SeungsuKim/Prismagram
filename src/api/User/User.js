@@ -2,6 +2,12 @@ import { prisma } from "../../../generated/prisma-client";
 
 export default {
   User: {
+    posts: root => prisma.user({ id: root.id }).posts(),
+    likes: root => prisma.user({ id: root.id }).likes(),
+    comments: root => prisma.user({ id: root.id }).comments(),
+    rooms: root => prisma.user({ id: root.id }).rooms(),
+    followers: root => prisma.user({ id: root.id }).followers(),
+    following: root => prisma.user({ id: root.id }).following(),
     fullName: (root) => {
       return `${root.firstName} ${root.lastName}`;
     },

@@ -7,23 +7,12 @@ export default {
       isAuthenticated(request);
       const { id } = args;
       const { user } = request;
-      const canSee = await prisma.$exists.room({
-        AND: [
-          {
-            participants_some: {
-              id: user.id
-            }
-          },
-          {
-            id
-          }
-        ]
-      });
-      if (canSee) {
-        return prisma.room({ id }).$fragment(ROOM_FRAGMENT);
-      } else {
-        throw Error("You can't see this room");
+      const rooms = await prisma.user({ id: user.id }).rooms().$fragment(ROOM_FRAGMENT);
+      const room = rooms.find((room) => room.id === id);
+      if (room) {
+        return room;
       }
+      throw Error("You can't see this room");
     }
   }
 }

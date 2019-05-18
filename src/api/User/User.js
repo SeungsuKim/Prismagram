@@ -8,7 +8,7 @@ export default {
     rooms: root => prisma.user({ id: root.id }).rooms(),
     followers: root => prisma.user({ id: root.id }).followers(),
     following: root => prisma.user({ id: root.id }).following(),
-    fullName: (root) => {
+    fullName: root => {
       return `${root.firstName} ${root.lastName}`;
     },
     isFollowing: (root, _, { request }) => {
@@ -28,6 +28,20 @@ export default {
       const { id: rootId } = root;
       return user.id === rootId;
     },
-    postCount = ({id}) => prisma.postsConnection({where: {user: {id}}}).aggregate().count()
+    postCount: ({ id }) =>
+      prisma
+        .postsConnection({ where: { user: { id } } })
+        .aggregate()
+        .count(),
+    followingCount: ({ id }) =>
+      prisma
+        .usersConnection({ where: { followers_some: { id } } })
+        .aggregate()
+        .count(),
+    followerCount: ({ id }) =>
+      prisma
+        .usersConnection({ where: { following_some: { id } } })
+        .aggregate()
+        .count()
   }
 };

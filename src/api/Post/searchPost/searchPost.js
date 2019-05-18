@@ -6,13 +6,10 @@ export default {
       const { term } = args;
       const posts = prisma.posts({
         where: {
-          OR: [
-            { location_starts_with: term },
-            { caption_starts_with: term }
-          ]
+          OR: [{ location_contains: term }, { caption_contains: term }]
         }
       });
       return posts;
     }
   }
-}
+};

@@ -1664,7 +1664,7 @@ type Subscription {
 
 type User {
   id: ID!
-  avatar: String
+  avatar: String!
   username: String!
   email: String!
   firstName: String
@@ -1865,7 +1865,7 @@ enum UserOrderByInput {
 
 type UserPreviousValues {
   id: ID!
-  avatar: String
+  avatar: String!
   username: String!
   email: String!
   firstName: String

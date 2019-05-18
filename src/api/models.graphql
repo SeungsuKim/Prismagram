@@ -14,6 +14,8 @@ extend type User {
   isFollowing: Boolean!
   isSelf: Boolean!
   postCount: Int!
+  followingCount: Int!
+  followerCount: Int!
 }
 
 extend type Post {

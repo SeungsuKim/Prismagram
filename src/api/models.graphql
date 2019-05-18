@@ -13,6 +13,7 @@ extend type User {
   fullName: String
   isFollowing: Boolean!
   isSelf: Boolean!
+  postCount: Int!
 }
 
 extend type Post {

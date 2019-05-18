@@ -27,6 +27,7 @@ export default {
       const { user } = request;
       const { id: rootId } = root;
       return user.id === rootId;
-    }
+    },
+    postCount = ({id}) => prisma.postsConnection({where: {user: {id}}}).aggregate().count()
   }
 };

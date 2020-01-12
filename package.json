@@ -7,9 +7,11 @@
   "author": "seungsukim <seungsu0407@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.8.0",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
+    "@babel/runtime": "^7.8.0",
     "dotenv": "^7.0.0",
     "graphql-tools": "^4.0.4",
     "graphql-yoga": "^1.17.4",
@@ -23,6 +25,7 @@
     "prisma-client-lib": "^1.31.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.8.0",
     "eslint-plugin-react": "^7.12.4",
     "nodemon": "^1.18.11"
   },
@@ -30,6 +33,7 @@
     "deploy": "prisma deploy",
     "generate": "prisma generate",
     "prisma": "yarn run deploy && yarn run generate",
-    "dev": "nodemon --exec babel-node src/server.js --delay 1"
+    "dev": "nodemon --exec babel-node src/server.js --delay 1",
+    "build": "babel src -d build"
   }
 }
